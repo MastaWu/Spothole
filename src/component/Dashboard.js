@@ -8,7 +8,9 @@ import Table, {
   TableHead,
   TableRow
 } from "material-ui/Table";
+import HoleList from "./HoleList";
 import { withStyles } from "material-ui/styles";
+import MapContainer from "../container/MapContainer";
 
 const styles = {
   root: {
@@ -39,13 +41,17 @@ const Dashboard = props => {
                 <Table className={classes.table}>
                   <TableHead>
                     <TableRow>
-                      <TableCell>Dessert (100g serving)</TableCell>
-                      <TableCell numeric>Calories</TableCell>
-                      <TableCell numeric>Fat (g)</TableCell>
-                      <TableCell numeric>Carbs (g)</TableCell>
-                      <TableCell numeric>Protein (g)</TableCell>
+                      <TableCell>Hole Type</TableCell>
+                      <TableCell numeric>Latitude</TableCell>
+                      <TableCell numeric>Longitude</TableCell>
+                      <TableCell numeric>Description</TableCell>
                     </TableRow>
                   </TableHead>
+                  <TableBody>
+                    {props.holes.map((hole, index) => {
+                      return <HoleList hole={hole} key={index} />;
+                    })}
+                  </TableBody>
                 </Table>
               </div>
             </Paper>
@@ -54,7 +60,7 @@ const Dashboard = props => {
 
         <Grid item xs={6}>
           <Grow in={true}>
-            <Paper className={classes.paper}>Test</Paper>
+            <MapContainer />
           </Grow>
         </Grid>
       </Grid>
