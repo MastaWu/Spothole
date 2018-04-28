@@ -54,7 +54,7 @@ class App extends Component {
       container: { margin: "20px" }
     };
 
-    const { classes, theme } = this.props;
+    const { classes } = this.props;
     return (
       <Router>
         <div className="App">

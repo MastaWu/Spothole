@@ -1,12 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import { withStyles } from "material-ui/styles";
 import Typography from "material-ui/Typography";
 import Modal from "material-ui/Modal";
-import Button from "material-ui/Button";
-
-function rand() {
-  return Math.round(Math.random() * 20) - 10;
-}
 
 const styles = theme => ({
   paper: {
